@@ -1,11 +1,20 @@
+!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="index.js">
-    <title>my web</title>
+  <meta charset="UTF-8">
+  <title>Web demo</title>
 </head>
 <body>
-    <p>hello world</p><br>
-    <a href="trang1.html">ve trang 1</a>
+  <h1>Frontend trên GitHub Pages 🚀</h1>
+  <button onclick="getData()">Lấy dữ liệu từ backend</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function getData() {
+      const res = await fetch("https://my-backend.onrender.com/api/hello");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
 </body>
 </html>
